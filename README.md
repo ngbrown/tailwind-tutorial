@@ -1,6 +1,5 @@
-Manually build tailwind:
+Run:
 
 ```shell
-npx tailwindcss build -i css/tailwind.css -o bu
-ild/tailwind.css
+rpm run dev
 ```
