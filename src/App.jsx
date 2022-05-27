@@ -1,5 +1,8 @@
 import React from "react";
 
+import popularDestinations from "./data/popularDestinations";
+import DestinationCard from "./components/DestinationCard";
+
 export default function App() {
   return (
     <div>
@@ -50,131 +53,9 @@ export default function App() {
           explore.
         </p>
         <div className="mt-6 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-          <div className="flex items-center overflow-hidden rounded-lg bg-white shadow-lg">
-            <img
-              className="h-32 w-32 flex-shrink-0"
-              src="/img/toronto.jpg"
-              alt="Toronto skyline"
-            />
-            <div className="px-6 py-4">
-              <h3 className="text-lg font-semibold text-gray-800">Toronto</h3>
-
-              <p className="text-gray-600">$120 / night average</p>
-              <div className="mt-4">
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  Explore 76 properties
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center overflow-hidden rounded-lg bg-white shadow-lg">
-            <img
-              className="h-32 w-32 flex-shrink-0"
-              src="/img/malibu.jpg"
-              alt="Cliff in Malibu"
-            />
-            <div className="px-6 py-4">
-              <h3 className="text-lg font-semibold text-gray-800">Malibu</h3>
-
-              <p className="text-gray-600">$215 / night average</p>
-              <div className="mt-4">
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  Explore 43 properties
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center overflow-hidden rounded-lg bg-white shadow-lg">
-            <img
-              className="h-32 w-32 flex-shrink-0"
-              src="/img/chicago.jpg"
-              alt="Chicago skyline"
-            />
-            <div className="px-6 py-4">
-              <h3 className="text-lg font-semibold text-gray-800">Chicago</h3>
-
-              <p className="text-gray-600">$130 / night average</p>
-              <div className="mt-4">
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  Explore 115 properties
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center overflow-hidden rounded-lg bg-white shadow-lg">
-            <img
-              className="h-32 w-32 flex-shrink-0"
-              src="/img/seattle.jpg"
-              alt="Seattle skyline"
-            />
-            <div className="px-6 py-4">
-              <h3 className="text-lg font-semibold text-gray-800">Seattle</h3>
-
-              <p className="text-gray-600">$135 / night average</p>
-              <div className="mt-4">
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  Explore 63 properties
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center overflow-hidden rounded-lg bg-white shadow-lg">
-            <img
-              className="h-32 w-32 flex-shrink-0"
-              src="/img/colorado.jpg"
-              alt="Lake in Colorado"
-            />
-            <div className="px-6 py-4">
-              <h3 className="text-lg font-semibold text-gray-800">Colorado</h3>
-
-              <p className="text-gray-600">$85 / night average</p>
-              <div className="mt-4">
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  Explore 43 properties
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center overflow-hidden rounded-lg bg-white shadow-lg">
-            <img
-              className="h-32 w-32 flex-shrink-0"
-              src="/img/miami.jpg"
-              alt="Beach in Miami"
-            />
-            <div className="px-6 py-4">
-              <h3 className="text-lg font-semibold text-gray-800">Miami</h3>
-
-              <p className="text-gray-600">$115 / night average</p>
-              <div className="mt-4">
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-indigo-600 hover:text-indigo-500"
-                >
-                  Explore 86 properties
-                </a>
-              </div>
-            </div>
-          </div>
+          {popularDestinations.map((destination) => (
+            <DestinationCard key={destination.city} destination={destination} />
+          ))}
         </div>
       </div>
     </div>
